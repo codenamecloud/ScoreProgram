@@ -56,17 +56,25 @@
         </div>
         <div style="overflow: scroll" id="scroll" class="scroll">
             <%
-                List<StudentList> info = (List<StudentList>) session.getAttribute("studentList");
-                if (info != null)
+                List<String> num_list = (List<String>) session.getAttribute("num_list");
+                List<String> name_list = (List<String>) session.getAttribute("name_list");
+                List<Integer> korean_list = (List<Integer>) session.getAttribute("korean_list");
+                List<Integer> english_list = (List<Integer>) session.getAttribute("english_list");
+                List<Integer> math_list = (List<Integer>) session.getAttribute("math_list");
+                List<Integer> total_list = (List<Integer>) session.getAttribute("total_list");
+                List<Integer> avg_list = (List<Integer>) session.getAttribute("avg_list");
+                if (num_list != null && name_list != null && korean_list != null && english_list != null && math_list != null && total_list != null && avg_list != null)
                 {
-                    for (StudentList students : info)
+                    for (int i = 0; i < num_list.size(); i++)
                     {
             %>
-                    <span><%= students.getNum()%></span>
-                    <span><%= students.getName()%></span>
-                    <span><%= students.getKorean()%></span>
-                    <span><%= students.getEnglish()%></span>
-                    <span><%= students.getMath()%></span>
+                    <span id="number_list" class="number_list"><%= num_list.get(i)%></span>
+                    <span id="name_list" class="name_list"><%= name_list.get(i)%></span>
+                    <span id="korean_list" class="korean_list"><%= korean_list.get(i)%></span>
+                    <span id="english_list" class="english_list"><%= english_list.get(i)%></span>
+                    <span id="math_list" class="math_list"><%= math_list.get(i)%></span>
+                    <span id="total_list" class="total_list"><%= total_list.get(i)%></span>
+                    <span id="avg_list" class="avg_list"><%= avg_list.get(i)%></span>
             <%
                     }
                 }else
