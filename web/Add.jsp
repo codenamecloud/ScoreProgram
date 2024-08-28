@@ -28,8 +28,13 @@
     vo.setEnglish(english);
     vo.setMath(math);
 
-    List<StudentList> info = new ArrayList<>();
-    info.add(vo);
+    List<StudentList> info = (List<StudentList>) session.getAttribute("studentList");
+    if (info != null)
+    {
+        info.add(vo);
+    }
+
+    session.setAttribute("studentList", info);
 
 //    for (StudentList student : info)
 //    {

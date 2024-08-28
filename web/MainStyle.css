@@ -59,3 +59,94 @@
     left: 100px;
     color: white;
 }
+.btn
+{
+    position: absolute;
+    top: 650px;
+    left: 200px;
+}
+.add
+{
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.modify
+{
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.delete
+{
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.class
+{
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    width: 1100px;
+}
+.num2
+{
+    color: white;
+    font-size: 40px;
+}
+.name2
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 100px;
+}
+.korean2
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 200px;
+}
+.english2
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 250px;
+}
+.math2
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 300px;
+}
+.total
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 350px;
+}
+.avg
+{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    left: 400px;
+}
+.scroll
+{
+    position: absolute;
+    top: 300px;
+    left: 700px;
+    width: 1100px;
+    height: 400px;
+}
