@@ -18,6 +18,7 @@
     left: 100px;
     border: 5px solid green;
     border-radius: 10px;
+    background-color: lightblue;
 }
 .num
 {
@@ -152,48 +153,47 @@
 }
 .number_list
 {
-    color: white;
     font-size: 40px;
 }
 .name_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 100px;
+    left: 90px;
 }
 .korean_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 200px;
+    left: 170px;
 }
 .english_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 250px;
+    left: 260px;
 }
 .math_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 300px;
+    left: 340px;
 }
 .total_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 350px;
+    left: 420px;
 }
 .avg_list
 {
-    color: white;
     font-size: 40px;
     position: relative;
-    left: 400px;
+    left: 480px;
+}
+.std_list
+{
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid lightcoral;
 }
