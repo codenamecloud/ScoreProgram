@@ -6,106 +6,65 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Objects" %>
 <%
     String num = request.getParameter("num");
     String name = request.getParameter("name");
-    Integer korean = Integer.parseInt(request.getParameter("korean"));
-    Integer english = Integer.parseInt(request.getParameter("english"));
-    Integer math = Integer.parseInt(request.getParameter("math"));
-    Integer total = korean + english + math;
-    Integer avg = (korean + english + math) / 2;
-
+    String korean = request.getParameter("korean");
+    String english = request.getParameter("english");
+    String math = request.getParameter("math");
+    Integer total = Integer.parseInt(korean) + Integer.parseInt(english) + Integer.parseInt(math);
+    Integer avg = (Integer.parseInt(korean) + Integer.parseInt(english) + Integer.parseInt(math)) / 3;
 
     List<String> num_list = (List<String>) session.getAttribute("num_list");
-    if (num_list == null)
-    {
-        num_list = new ArrayList<>();
-        num_list.add(num);
-        session.setAttribute("num_list", num_list);
-    }
-    else
-    {
-        num_list.set(num);
-    }
-
-
     List<String> name_list = (List<String>) session.getAttribute("name_list");
-    if (name_list == null)
-    {
-        name_list = new ArrayList<>();
-        name_list.add(name);
-        session.setAttribute("name_list", name_list);
-    }
-    else
-    {
-        name_list.add(name);
-    }
+    List<String> korean_list = (List<String>) session.getAttribute("korean_list");
+    List<String> english_list = (List<String>) session.getAttribute("english_list");
+    List<String> math_list = (List<String>) session.getAttribute("math_list");
+    List<String> total_list = (List<String>) session.getAttribute("total_list");
+    List<String> avg_list = (List<String>) session.getAttribute("avg_list");
 
+    int count = 0;
+    for(String number : num_list)
+    {
+        count += 1;
+        if(num.equals(number))
+        {
+            name_list.set(count - 1, name);
+            korean_list.set(count - 1, korean);
+            english_list.set(count - 1, english);
+            math_list.set(count - 1, math);
+            total_list.set(count - 1, String.valueOf(total));
+            avg_list.set(count - 1, String.valueOf(avg));
+        } else if (Integer.parseInt(num) > Integer.parseInt(number) )
+        {
+            num_list.add(num);
+            name_list.add(name);
+            korean_list.add(korean);
+            english_list.add(english);
+            math_list.add(math);
+            total_list.add(String.valueOf(total));
+            avg_list.add(String.valueOf(avg));
 
-    List<Integer> korean_list = (List<Integer>) session.getAttribute("korean_list");
-    if (korean_list == null)
-    {
-        korean_list = new ArrayList<>();
-        korean_list.add(korean);
-        session.setAttribute("korean_list", korean_list);
-    }
-    else
-    {
-        korean_list.add(korean);
-    }
-
-    List<Integer> english_list = (List<Integer>) session.getAttribute("english_list");
-    if (english_list == null)
-    {
-        english_list = new ArrayList<>();
-        english_list.add(english);
-        session.setAttribute("english_list", english_list);
-    }
-    else
-    {
-        english_list.add(english);
-    }
-
-    List<Integer> math_list = (List<Integer>) session.getAttribute("math_list");
-    if (math_list == null)
-    {
-        math_list = new ArrayList<>();
-        math_list.add(math);
-        out.println(math_list);
-        session.setAttribute("math_list", math_list);
-    }
-    else
-    {
-        math_list.add(math);
-    }
-
-    List<Integer> total_list = (List<Integer>) session.getAttribute("total_list");
-    if (total_list == null)
-    {
-        total_list = new ArrayList<>();
-        total_list.add(total);
-        out.println(total_list);
-        session.setAttribute("total_list", total_list);
-    }
-    else
-    {
-        total_list.add(total);
-    }
-
-    List<Integer> avg_list = (List<Integer>) session.getAttribute("avg_list");
-    if (avg_list == null)
-    {
-        avg_list = new ArrayList<>();
-        avg_list.add(avg);
-        out.println(avg_list);
-        session.setAttribute("avg_list", avg_list);
-    }
-    else
-    {
-        avg_list.add(avg);
+            num_list.remove(count - 1);
+            name_list.remove(count - 1);
+            korean_list.remove(count - 1);
+            english_list.remove(count - 1);
+            math_list.remove(count - 1);
+            total_list.remove(count - 1);
+            avg_list.remove(count - 1);
+        } else
+        {
+            num_list.set(count - 1, num);
+            name_list.set(count - 1, name);
+            korean_list.set(count - 1, korean);
+            english_list.set(count - 1, english);
+            math_list.set(count - 1, math);
+            total_list.set(count - 1, String.valueOf(total));
+            avg_list.set(count - 1, String.valueOf(avg));
+        }
     }
 
     session.setAttribute("num_list", num_list);
@@ -118,6 +77,6 @@
 
 %>
 <script>
-    location.href = "./Main.jsp";
+    location.href="./Main.jsp";
 </script>
 

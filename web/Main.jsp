@@ -71,6 +71,22 @@
 
                 location.href="./Modify.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
             }
+
+            function deleteInfo()
+            {
+                const num = document.getElementById("nu").value;
+                const name = document.getElementById("nam").value;
+                const korean = document.getElementById("ko").value;
+                const math = document.getElementById("ma").value;
+                const english = document.getElementById("en").value;
+
+                location.href="./Delete.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+            }
+
+            function saveTxt()
+            {
+
+            }
         </script>
         <div id="header" class="header"><p id="h" class="h">성적입력 프로그램</p></div>
         <div id="inputBox" class="inputBox">
@@ -87,7 +103,7 @@
                 } else
                     {
                     %>
-                    <span id="num" class="num">번호 <input type="text" id="nu" class="nu" value="<%=req_num%>"></span>
+                    <span id="num" class="num">번호 <input type="text" id="nu" class="nu"></span>
                     <span id="name" class="name">이름 <input type="text" id="nam" class="nam"></span>
                     <span id="korean" class="korean">국어 <input type="text" id="ko" class="ko"></span>
                     <span id="math" class="math">수학 <input type="text" id="ma" class="ma"></span>
@@ -99,7 +115,7 @@
         <div id="btn" class="btn">
             <input id="add" class="add" type="button" value="추가" onclick="submitInfo()">
             <input id="modify" class="modify" type="button" value="수정" onclick="modifyInfo()">
-            <input id="delete" class="delete" type="button" value="삭제">
+            <input id="delete" class="delete" type="button" value="삭제" onclick="deleteInfo()">
         </div>
         <div id="class" class="class">
             <span id="num2" class="num2">학번</span>
@@ -134,5 +150,8 @@
                     }
             %>
         </div>
+        <input type="button" id="save" class="save" value="파일저장" onclick="saveTxt()">
+        <input type="button" id="open" class="open" value="파일열기">
+        <input type="button" id="reset" class="reset" value="초기화">
     </body>
 </html>
