@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList" %>
-
 <%
     String num = request.getParameter("num");
     String name = request.getParameter("name");
@@ -17,7 +16,6 @@
     String math = request.getParameter("math");
     Integer total = Integer.parseInt(korean) + Integer.parseInt(english) + Integer.parseInt(math);
     Integer avg = (Integer.parseInt(korean) + Integer.parseInt(english) + Integer.parseInt(math)) / 3;
-
 
     List<String> num_list = (List<String>) session.getAttribute("num_list");
     List<String> name_list = (List<String>) session.getAttribute("name_list");

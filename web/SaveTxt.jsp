@@ -12,24 +12,30 @@
   List<String> total_list = (List<String>) session.getAttribute("total_list");
   List<String> avg_list = (List<String>) session.getAttribute("avg_list");
 
-  String path = application.getRealPath("/") + "output.txt";
+  if (num_list != null)
+  {
+    String path = application.getRealPath("/") + "output.txt";
 
-  try (FileWriter fileWriter = new FileWriter(path);
-       PrintWriter printWriter = new PrintWriter(fileWriter)) {
-    if (num_list != null) {
-      for (int i = 0; i < num_list.size(); i++) {
-        printWriter.println(num_list.get(i));
-        printWriter.println(name_list.get(i));
-        printWriter.println(korean_list.get(i));
-        printWriter.println(english_list.get(i));
-        printWriter.println(math_list.get(i));
-        printWriter.println(total_list.get(i));
-        printWriter.println(avg_list.get(i));
+    try (FileWriter fileWriter = new FileWriter(path);
+         PrintWriter printWriter = new PrintWriter(fileWriter))
+    {
+      for (int i = 0; i < num_list.size(); i++)
+      {
+        printWriter.print(num_list.get(i) + ", ");
+        printWriter.print(name_list.get(i) + ", ");
+        printWriter.print(korean_list.get(i) + ", ");
+        printWriter.print(english_list.get(i) + ", ");
+        printWriter.print(math_list.get(i) + ", ");
+        printWriter.print(total_list.get(i) + ", ");
+        printWriter.print(avg_list.get(i));
+        printWriter.println("");
       }
+    } catch (IOException e)
+    {
+      e.printStackTrace();
     }
-  } catch (IOException e) {
-    e.printStackTrace();
   }
 
   response.sendRedirect("Main.jsp");
 %>
+

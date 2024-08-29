@@ -7,10 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.io.FileWriter" %>
-<%@ page import="java.io.IOException" %>
-<%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.io.FileInputStream" %>
 <%
     List<String> num_list = (List<String>) session.getAttribute("num_list");
     List<String> name_list = (List<String>) session.getAttribute("name_list");
@@ -43,7 +39,14 @@
                 const math = document.getElementById("ma").value;
                 const english = document.getElementById("en").value;
 
-                location.href="./Add.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                if (num == "" || name == "" || korean == "" || english == "" || math == "")
+                {
+                    alert("제대로 입력하세요.");
+                    history.back();
+                } else
+                {
+                    location.href="./Add.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                }
             }
 
             function read_info(index)
@@ -66,7 +69,14 @@
                 const math = document.getElementById("ma").value;
                 const english = document.getElementById("en").value;
 
-                location.href="./Modify.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                if (num == "" || name == "" || korean == "" || english == "" || math == "")
+                {
+                    alert("제대로 입력하세요.");
+                    history.back();
+                } else
+                {
+                    location.href = "./Modify.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                }
             }
 
             function deleteInfo()
@@ -77,7 +87,14 @@
                 const math = document.getElementById("ma").value;
                 const english = document.getElementById("en").value;
 
-                location.href="./Delete.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                if (num == "" || name == "" || korean == "" || english == "" || math == "")
+                {
+                    alert("삭제할 값이 없습니다.");
+                    history.back();
+                } else
+                {
+                    location.href = "./Delete.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                }
             }
 
             function saveTxt()
