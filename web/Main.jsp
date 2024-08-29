@@ -6,16 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.io.FileWriter" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.io.FileInputStream" %>
 <%
     List<String> num_list = (List<String>) session.getAttribute("num_list");
     List<String> name_list = (List<String>) session.getAttribute("name_list");
-    List<Integer> korean_list = (List<Integer>) session.getAttribute("korean_list");
-    List<Integer> english_list = (List<Integer>) session.getAttribute("english_list");
-    List<Integer> math_list = (List<Integer>) session.getAttribute("math_list");
-    List<Integer> total_list = (List<Integer>) session.getAttribute("total_list");
-    List<Integer> avg_list = (List<Integer>) session.getAttribute("avg_list");
+    List<String> korean_list = (List<String>) session.getAttribute("korean_list");
+    List<String> english_list = (List<String>) session.getAttribute("english_list");
+    List<String> math_list = (List<String>) session.getAttribute("math_list");
+    List<String> total_list = (List<String>) session.getAttribute("total_list");
+    List<String> avg_list = (List<String>) session.getAttribute("avg_list");
 
     String req_num = request.getParameter("number_list");
     String req_name = request.getParameter("name_list");
@@ -31,12 +34,6 @@
     <body>
         <script>
             document.body.style.backgroundColor='lightgrey';
-
-            console.log(<%= req_num%>)
-            console.log("<%= req_name%>")
-            console.log(<%= req_korean%>)
-            console.log(<%= req_english%>)
-            console.log(<%= req_math%>)
 
             function submitInfo()
             {
@@ -85,8 +82,19 @@
 
             function saveTxt()
             {
-
+                location.href = "./SaveTxt.jsp";
             }
+
+            function openTxt()
+            {
+                location.href = "./OpenTxt.jsp";
+            }
+
+            function deleteAll()
+            {
+                location.href = "./DeleteAll.jsp"
+            }
+
         </script>
         <div id="header" class="header"><p id="h" class="h">성적입력 프로그램</p></div>
         <div id="inputBox" class="inputBox">
@@ -151,7 +159,7 @@
             %>
         </div>
         <input type="button" id="save" class="save" value="파일저장" onclick="saveTxt()">
-        <input type="button" id="open" class="open" value="파일열기">
-        <input type="button" id="reset" class="reset" value="초기화">
+        <input type="button" id="open" class="open" value="파일열기" onclick="openTxt()">
+        <input type="button" id="reset" class="reset" value="초기화" onclick="deleteAll()">
     </body>
 </html>

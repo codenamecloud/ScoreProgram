@@ -7,8 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.Objects" %>
 <%
     String num = request.getParameter("num");
     String name = request.getParameter("name");

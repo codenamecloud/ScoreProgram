@@ -80,53 +80,6 @@
         }
     }
 
-
-
-//        num_list.add(num);
-//        name_list.add(name);
-//        korean_list.add(korean);
-//        english_list.add(english);
-//        math_list.add(math);
-//        total_list.add(String.valueOf(total));
-//        avg_list.add(String.valueOf(avg));
-//
-//        session.setAttribute("num_list", num_list);
-//        session.setAttribute("name_list", name_list);
-//        session.setAttribute("korean_list", korean_list);
-//        session.setAttribute("english_list", english_list);
-//        session.setAttribute("math_list", math_list);
-//        session.setAttribute("total_list", total_list);
-//        session.setAttribute("avg_list", avg_list);
-//    }
-//    else
-//    {
-//        for (String number : num_list)
-//        {
-//            count += 1;
-//            if (Integer.parseInt(num) > Integer.parseInt(number))
-//            {
-//                num_list.add(num);
-//                name_list.add(name);
-//                korean_list.add(korean);
-//                english_list.add(english);
-//                math_list.add(math);
-//                total_list.add(String.valueOf(total));
-//                avg_list.add(String.valueOf(avg));
-//            }
-//            else if (Integer.parseInt(num) < Integer.parseInt(number))
-//            {
-//                num_list.add(count - 1, num);
-//                name_list.add(count - 1, name);
-//                korean_list.add(count - 1, korean);
-//                english_list.add(count - 1, english);
-//                math_list.add(count - 1, math);
-//                total_list.add(count - 1, String.valueOf(total));
-//                avg_list.add(count - 1, String.valueOf(avg));
-//            }
-//        }
-//
-//    }
-//
     session.setAttribute("num_list", num_list);
     session.setAttribute("name_list", name_list);
     session.setAttribute("korean_list", korean_list);
