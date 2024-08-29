@@ -150,3 +150,50 @@
     width: 1100px;
     height: 400px;
 }
+.number_list
+{
+    color: white;
+    font-size: 40px;
+}
+.name_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 100px;
+}
+.korean_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 200px;
+}
+.english_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 250px;
+}
+.math_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 300px;
+}
+.total_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 350px;
+}
+.avg_list
+{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 400px;
+}
