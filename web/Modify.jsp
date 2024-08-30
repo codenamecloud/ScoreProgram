@@ -25,45 +25,50 @@
     List<String> avg_list = (List<String>) session.getAttribute("avg_list");
 
     int count = 0;
-    for(String number : num_list)
-    {
-        count += 1;
-        if(num.equals(number))
-        {
-            name_list.set(count - 1, name);
-            korean_list.set(count - 1, korean);
-            english_list.set(count - 1, english);
-            math_list.set(count - 1, math);
-            total_list.set(count - 1, String.valueOf(total));
-            avg_list.set(count - 1, String.valueOf(avg));
-        } else if (Integer.parseInt(num) > Integer.parseInt(number) )
-        {
-            num_list.add(num);
-            name_list.add(name);
-            korean_list.add(korean);
-            english_list.add(english);
-            math_list.add(math);
-            total_list.add(String.valueOf(total));
-            avg_list.add(String.valueOf(avg));
 
-            num_list.remove(count - 1);
-            name_list.remove(count - 1);
-            korean_list.remove(count - 1);
-            english_list.remove(count - 1);
-            math_list.remove(count - 1);
-            total_list.remove(count - 1);
-            avg_list.remove(count - 1);
-        } else
-        {
-            num_list.set(count - 1, num);
-            name_list.set(count - 1, name);
-            korean_list.set(count - 1, korean);
-            english_list.set(count - 1, english);
-            math_list.set(count - 1, math);
-            total_list.set(count - 1, String.valueOf(total));
-            avg_list.set(count - 1, String.valueOf(avg));
-        }
-    }
+    for(int i = 0; i < num_list.size();)
+
+//    for(String number : num_list)
+//    {
+//        count += 1;
+//        if(num.equals(number))
+//        {
+//            name_list.set(count - 1, name);
+//            korean_list.set(count - 1, korean);
+//            english_list.set(count - 1, english);
+//            math_list.set(count - 1, math);
+//            total_list.set(count - 1, String.valueOf(total));
+//            avg_list.set(count - 1, String.valueOf(avg));
+//
+//            out.println(name_list);
+//        } else if (Integer.parseInt(num) > Integer.parseInt(number))
+//        {
+//            num_list.add(num);
+//            name_list.add(name);
+//            korean_list.add(korean);
+//            english_list.add(english);
+//            math_list.add(math);
+//            total_list.add(String.valueOf(total));
+//            avg_list.add(String.valueOf(avg));
+//
+//            num_list.remove(count - 1);
+//            name_list.remove(count - 1);
+//            korean_list.remove(count - 1);
+//            english_list.remove(count - 1);
+//            math_list.remove(count - 1);
+//            total_list.remove(count - 1);
+//            avg_list.remove(count - 1);
+//        } else if (Integer.parseInt(num) < Integer.parseInt(number))
+//        {
+//            num_list.set(count - 1, num);
+//            name_list.set(count - 1, name);
+//            korean_list.set(count - 1, korean);
+//            english_list.set(count - 1, english);
+//            math_list.set(count - 1, math);
+//            total_list.set(count - 1, String.valueOf(total));
+//            avg_list.set(count - 1, String.valueOf(avg));
+//        }
+//    }
 
     session.setAttribute("num_list", num_list);
     session.setAttribute("name_list", name_list);
@@ -74,7 +79,7 @@
     session.setAttribute("avg_list", avg_list);
 
 %>
-<script>
-    location.href="./Main.jsp";
-</script>
+<%--<script>--%>
+<%--    location.href="./Main.jsp";--%>
+<%--</script>--%>
 

@@ -45,7 +45,7 @@
                     history.back();
                 } else
                 {
-                    location.href="./Add.jsp?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
+                    location.href="../servlet/StudentsServlet?num=" + num + "&name=" + name + "&korean=" + korean + "&math=" + math + "&english=" + english;
                 }
             }
 
